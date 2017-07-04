@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+const deps = {};
+const merge = Object.assign;
+const repl = require('repl');
+merge(deps, {
+  merge,
+  mongoose: require('mongoose')
+});
+merge(repl.start('mongoose:> ').context, deps);
